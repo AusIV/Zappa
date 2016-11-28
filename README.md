@@ -362,6 +362,7 @@ to change Zappa's behavior. Use these at your own risk!
         "callbacks": { // Call custom functions during the local Zappa deployment/update process
             "settings": "my_app.settings_callback", // After loading the settings
             "zip": "my_app.zip_callback", // After creating the package
+            "stack": "my_app.stack_callback", // After creating the CF Stack Template for the API Gateway, but before deploying it
             "post": "my_app.post_callback", // After command has executed
         },
         "cache_cluster_enabled": false, // Use APIGW cache cluster (default False)

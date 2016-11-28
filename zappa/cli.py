@@ -396,6 +396,8 @@ class ZappaCLI(object):
                                                         self.iam_authorization,
                                                         self.authorizer)
 
+            self.callback('stack')
+
             self.zappa.update_stack(self.lambda_name, self.s3_bucket_name, wait=True)
 
             # Deploy the API!
@@ -504,6 +506,7 @@ class ZappaCLI(object):
                                              self.integration_content_type_aliases,
                                              self.iam_authorization,
                                              self.authorizer)
+            self.callback('stack')
             self.zappa.update_stack(self.lambda_name, self.s3_bucket_name, wait=True, update_only=True)
 
             api_id = self.zappa.get_api_id(self.lambda_name)
